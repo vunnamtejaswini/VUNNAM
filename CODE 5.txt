@@ -1,0 +1,19 @@
+import random
+
+# Simulate sensor input (distance to obstacle in meters)
+def get_sensor_data():
+    return random.uniform(0.1, 2.0)  # returns a distance between 0.1 and 2.0 meters
+
+# Autonomous vehicle logic
+def autonomous_drive():
+    for step in range(5):
+        distance = get_sensor_data()
+        print(f"Step {step + 1}: Obstacle {distance:.2f} meters ahead.", end=" ")
+
+        if distance < 0.5:
+            print("Too close! Turning right.")
+        else:
+            print("Path clear. Moving forward.")
+
+# Run the simple simulation
+autonomous_drive()
